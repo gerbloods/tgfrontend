@@ -25,7 +25,6 @@ const ProfileComponent: React.FC = () => {
 
         setInfo({ status, vlessLink, expireDate });
       } catch (err) {
-        console.error('Ошибка:', err);
         setError('Не удалось получить данные пользователя');
         alert(err.message || 'Произошла ошибка');
       }
@@ -33,6 +32,7 @@ const ProfileComponent: React.FC = () => {
 
     fetchUserInfo();
   }, [user]);
+
 
   if (error) return <div style={{ color: 'red' }}>{error}</div>;
   if (!info) return <div>Загрузка...</div>;

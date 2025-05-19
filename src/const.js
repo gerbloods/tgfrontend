@@ -1,1 +1,1 @@
-export const SERVER = 'https://basically-bands-strike-binary.trycloudflare.com'
+export const SERVER = 'https://luck-garcia-reflected-painful.trycloudflare.com'
