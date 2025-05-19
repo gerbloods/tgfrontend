@@ -1,0 +1,1 @@
+export const SERVER = 'https://basically-bands-strike-binary.trycloudflare.com'
