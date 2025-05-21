@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import { useTelegram } from './telegramHook.jsx';
+import { useTelegram } from './telegramHook';
 import { Route, Routes, useNavigate, BrowserRouter } from 'react-router-dom';
-import MenuComponent from './menuComponent.js';
-import ProfileComponent from './profileComponent.js';
-import PaymentComponent from './paymentComponent.js';
-
+import MenuComponent from './menuComponent';
+import ProfileComponent from './profileComponent';
+import PaymentComponent from './paymentComponent';
+import PaymentPage from './paymentPage';
 
 const Home: React.FC = () => {
   const { user } = useTelegram();
@@ -14,7 +14,9 @@ const Home: React.FC = () => {
   return (
     <div className="container">
       <div className="centered-text">Привет, {user?.first_name}!</div>
-      <button className="bottom-button" onClick={() => navigate('/menu')}>Действия</button>
+      <button className="bottom-button" onClick={() => navigate('/menu')}>
+        Действия
+      </button>
     </div>
   );
 };
@@ -26,7 +28,8 @@ const App: React.FC = () => {
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<MenuComponent />} />
         <Route path="/profile" element={<ProfileComponent />} />
-        <Route path="/payment" element={<PaymentComponent />} />
+        <Route path="/payment" element={<PaymentComponent />} /> {/* Страница выбора времени */}
+        <Route path="/payment-page" element={<PaymentPage />} /> {/* Страница с QR-кодами */}
       </Routes>
     </BrowserRouter>
   );
