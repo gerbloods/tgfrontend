@@ -1,0 +1,260 @@
+/* body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .centered-text {
+    font-size: 2rem;
+    margin-top: 70%;
+    margin-bottom: auto;
+  }
+  
+  .bottom-button {
+    width: 90%;
+    padding: 20px;
+    font-size: 1.5rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: auto;
+    margin-bottom: 20px;
+  }
+  
+  .bottom-button:hover {
+    background-color: #0056b3;
+  }
+
+
+
+
+  .menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+
+.menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.menu-links button {
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.menu-links button:hover {
+  background-color: #117a8b;
+} */
+
+/* Базовые стили */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f8f8;
+  color: #5e3b4c; /* Сиреневый */
+}
+
+/* Главная страница */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+  position: relative;
+  padding: 1rem;
+  text-align: center;
+}
+
+.centered-text {
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: #5e3b4c;
+}
+
+.bottom-button {
+  position: absolute;
+  bottom: 2rem;
+  padding: 1rem 2.5rem;
+  background-color: #d39aa5;
+  color: #5e3b4c;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.bottom-button:hover {
+  opacity: 0.9;
+}
+
+/* Меню */
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem;
+  min-height: 85vh;
+  background-color: #f8f8f8;
+}
+
+.menu-links {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.menu-links button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #5e3b4c;
+  border-bottom: 1px solid #5e3b4c;
+  padding-bottom: 0.5rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.menu-links button:hover {
+  opacity: 0.7;
+}
+
+.menu-back {
+  margin-top: auto;
+  margin-bottom: 2rem;
+  color: #5e3b4c;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  border-bottom: 1px solid #5e3b4c;
+  cursor: pointer;
+}
+
+.payment-container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Секция с QR-кодами */
+.qr-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Блок с QR-кодом */
+.qr-block {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  word-break: break-all;
+}
+
+/* Изображение QR-кода */
+.qr-image {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* Стиль для текста, который будет кликабельным */
+.copy-text {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+  user-select: none;  /* Отключаем выделение текста */
+}
+
+/* Сообщение о том, что текст скопирован */
+.copied-message {
+  color: green;
+  margin-top: 10px;
+}
+
+/* Кнопка подтверждения оплаты */
+.payment-button {
+  padding: 12px 20px;
+  font-size: 18px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.container-opl {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.heading-opl {
+  margin-bottom: 30px;
+}
+
+.subscriptionSection {
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 250px;
+  margin-bottom: 10px;
+}
+
+.button-opl-1 {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
