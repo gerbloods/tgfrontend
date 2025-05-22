@@ -11,7 +11,7 @@ const MenuComponent: React.FC = () => {
         <button onClick={() => navigate("/payment")}>Продлить подписку</button>
         <button onClick={() => navigate("/profile")}>Информация о аккаунте</button>
       </div>
-      <button className="bottom-button" onClick={() => navigate("/")}>Назад</button>
+      <button className="menu-back" onClick={() => navigate("/")}>Назад</button>
     </div>
   );
 };

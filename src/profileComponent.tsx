@@ -12,6 +12,8 @@ const ProfileComponent: React.FC = () => {
     status: string;
     vlessLink: string;
     expireDate: string;
+    used_traffic: number;
+    data_limit: number | null;
   }>(null);
   const [error, setError] = useState('');
 
@@ -24,9 +26,9 @@ const ProfileComponent: React.FC = () => {
           telegram_id: user.id,
         });
 
-        const { status, vlessLink, expireDate } = res.data;
+        const { status, vlessLink, expireDate, used_traffic, data_limit } = res.data;
 
-        setInfo({ status, vlessLink, expireDate });
+        setInfo({ status, vlessLink, expireDate, used_traffic, data_limit });
       } catch (err) {
         setError('Не удалось получить данные пользователя');
         alert(err.message || 'Произошла ошибка');
@@ -67,21 +69,30 @@ const handleShowLink = () => {
     document.body.removeChild(tempInput);
   }
 };
+const checkTraffic = () => {
+  if (!info || typeof info.data_limit !== 'number') return 'Безлимит';
+
+  const used = Math.floor((Number(info.used_traffic) || 0) / 1048576);
+  const limit = Math.floor((Number(info.data_limit) || 0) / 1073741824);
+
+  return `${used} МБ / ${limit} ГБ`;
+};
   return (
     <div className="container">
       <div className='down'>
   <h2>Профиль</h2>
 
-  <p><strong>Статус: </strong>{info.status}</p>
+  <p><strong>Статус: </strong>{info.status === 'active' ? "Активен" : "Деактивировано" }</p>
   <p>
   <strong>Срок подписки до: </strong>
   {info.expireDate && info.expireDate !== 'Без срока'
     ? new Date(Number(info.expireDate) * 1000).toLocaleDateString()
     : 'Бессрочно'}
 </p>
+<p><strong>Тарифный лимит: </strong>{checkTraffic()}</p>
 
   <div className="vless-container">
-  <p><strong>VLESS:</strong></p>
+  <p><strong>Ссылка на подписку:</strong></p>
   
     <p className="vless-toggle" onClick={handleShowLink}>Скопировать</p>
     {copied && (
@@ -104,7 +115,7 @@ const handleShowLink = () => {
 
 </div>
 
-  <button className="bottom-button" onClick={() => navigate("/menu")}>Назад</button>
+  <button className="menu-back" onClick={() => navigate("/menu")}>Назад</button>
 </div>
   );
 };

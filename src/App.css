@@ -102,6 +102,13 @@ body, html {
   margin-top: 15rem;
 }
 
+.centered-text-modified {
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: #5e3b4c;
+  margin-top: 10rem;
+}
+
 .bottom-button {
   margin-top: auto;
   margin-bottom: 3rem; /* регулируйте по желанию */
@@ -273,13 +280,13 @@ body, html {
 .title {
   font-size: 28px;
   margin-bottom: 8px;
-  color: #222;
+  color: #5e3b4c;
 }
 
 .subtitle {
   font-size: 16px;
   margin-bottom: 30px;
-  color: #555;
+  color: #5e3b4c;
 }
 
 .payment-options {
@@ -298,7 +305,7 @@ body, html {
 
 .payment-option h3 {
   margin-bottom: 12px;
-  color: #333;
+  color: #5e3b4c;
 }
 
 .donate-button {
@@ -331,6 +338,7 @@ body, html {
 }
 
 
+
 /* .menu-back {
   background: #ddd;
   border: none;
@@ -344,3 +352,98 @@ body, html {
 .menu-back:hover {
   background: #ccc;
 } */
+
+.payment-container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Секция с QR-кодами */
+.qr-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Блок с QR-кодом */
+.qr-block {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  word-break: break-all;
+}
+
+/* Изображение QR-кода */
+.qr-image {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* Стиль для текста, который будет кликабельным */
+.copy-text {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+  user-select: none;  /* Отключаем выделение текста */
+}
+
+/* Сообщение о том, что текст скопирован */
+.copied-message {
+  color: green;
+  margin-top: 10px;
+}
+
+/* Кнопка подтверждения оплаты */
+.payment-button {
+  padding: 12px 20px;
+  font-size: 18px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.container-opl {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.heading-opl {
+  margin-bottom: 30px;
+}
+
+.subscriptionSection {
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 250px;
+  margin-bottom: 10px;
+}
+
+.button-opl-1 {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
