@@ -24,7 +24,8 @@ const PaymentComponent: React.FC = () => {
       <div className="payment-page">
       <div className="payment-header">
         <h2 className="title">Продление подписки</h2>
-        <p className="subtitle">Вы можете продлить подписку удобным для вас способом:</p>
+        <p className="subtitle">Вы можете продлить подписку удобным для вас способом (При оплате указывайте в имени отправителя ваш профиль id):</p>
+        
       </div>
 
       <div className="payment-options">

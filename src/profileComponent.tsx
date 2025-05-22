@@ -69,6 +69,22 @@ const handleShowLink = () => {
     document.body.removeChild(tempInput);
   }
 };
+const handleCopyUserId = () => {
+  if (user?.id) {
+    const tempInput = document.createElement('input');
+    tempInput.value = user.id;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    try {
+      document.execCommand('copy');
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Ошибка копирования:', err);
+    }
+    document.body.removeChild(tempInput);
+  }
+};
 const checkTraffic = () => {
   if (!info || typeof info.data_limit !== 'number') return 'Безлимит';
 
@@ -81,7 +97,9 @@ const checkTraffic = () => {
     <div className="container">
       <div className='down'>
   <h2>Профиль</h2>
-
+  <p onClick={handleCopyUserId} style={{ cursor: 'pointer' }}>
+  <strong>Ваш id: </strong>{user.id} (Скопировать)
+</p>
   <p><strong>Статус: </strong>{info.status === 'active' ? "Активен" : "Деактивировано" }</p>
   <p>
   <strong>Срок подписки до: </strong>
